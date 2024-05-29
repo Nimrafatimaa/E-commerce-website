@@ -3,9 +3,12 @@ import './Navbar.css';
 import logo from '../assets/logo.png'
 import cart_icon from '../assets/cart_icon.png'
 import { NavLink } from 'react-router-dom'
+import { useContext } from 'react';
+import { ShopeContext } from '../Context/ShopeContext';
 
 const Navbar = () => {
     const [menu, setmenu] = useState('shop')
+    const {getTotalitem} = useContext(ShopeContext)
     return (
         <div className='navbar'>
             <div className="nav-logo">
@@ -22,7 +25,7 @@ const Navbar = () => {
              <NavLink to="/login"><button>Login</button></NavLink>
               <NavLink to="/cart"><img src={cart_icon} alt="" /></NavLink>
                 
-                <div className="nav-count">0</div>
+                <div className="nav-count">{getTotalitem()}</div>
             </div>
         </div>
     )

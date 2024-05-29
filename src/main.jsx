@@ -5,8 +5,8 @@ import './index.css'
 import ShopeContextProvider from './Context/ShopeContext.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-    <ShopeContextProvider>
-      <App />
-      </ShopeContextProvider>
-    
+  <ShopeContextProvider>
+    <App />
+  </ShopeContextProvider>
+
 )
